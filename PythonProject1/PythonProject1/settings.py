@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+from gevent.testing import DEFAULT_LOCAL_HOST_ADDR
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -75,8 +77,13 @@ WSGI_APPLICATION = 'PythonProject1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': BASE_DIR / 'db.referalnaya sistema',
+        'USER': 'PythonProject1_db_user',
+        'PASSWORD': '2002_db_password',
+        'HOST': 'localhost',
+        'PORT': '5432'
+
     }
 }
 
